@@ -19,13 +19,7 @@ namespace BlackJack.model.rules
 
             if(score >= g_hitLimit && score < 21)
             {
-                foreach (Card c in a_dealer.GetHand())
-                {
-                    if (c.GetValue() == Card.Value.Ace)
-                    {
-                        hasAce = true;
-                    }
-                }
+                hasAce = a_dealer.HasAce();
             }
 
             return score < g_hitLimit || hasAce;

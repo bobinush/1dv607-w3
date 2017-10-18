@@ -38,7 +38,8 @@ namespace BlackJack.model
                 {2, 3, 4, 5, 6, 7, 8, 9, 10, 10 ,10 ,10, 11};
             int score = 0;
 
-            foreach(Card c in GetHand()) {
+            foreach (Card c in GetHand())
+            {
                 if (c.GetValue() != Card.Value.Hidden)
                 {
                     score += cardScores[(int)c.GetValue()];
@@ -57,6 +58,19 @@ namespace BlackJack.model
             }
 
             return score;
+        }
+
+        public bool HasAce()
+        {
+            bool hasAce = false;
+            foreach (Card c in GetHand())
+            {
+                if (c.GetValue() == Card.Value.Ace)
+                {
+                    hasAce = true;
+                }
+            }
+            return hasAce;
         }
     }
 }
