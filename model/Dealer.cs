@@ -46,7 +46,7 @@ namespace BlackJack.model
             return false;
         }
 
-        public void Stand() 
+        public void Stand()
         {
             if(m_deck != null) 
             {

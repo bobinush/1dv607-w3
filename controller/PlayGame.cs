@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BlackJack.model;
 
 namespace BlackJack.controller
 {
@@ -21,20 +22,20 @@ namespace BlackJack.controller
 
             int input = a_view.GetInput();
 
-            if (input == 'p')
+            if (input == (int)GameAlternatives.Play)
             {
                 a_game.NewGame();
             }
-            else if (input == 'h')
+            else if (input == (int)GameAlternatives.Hit)
             {
                 a_game.Hit();
             }
-            else if (input == 's')
+            else if (input == (int)GameAlternatives.Stand)
             {
                 a_game.Stand();
             }
 
-            return input != 'q';
+            return input != (int)GameAlternatives.Quit;
         }
     }
 }
