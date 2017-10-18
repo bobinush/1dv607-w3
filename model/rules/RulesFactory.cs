@@ -16,5 +16,10 @@ namespace BlackJack.model.rules
         {
             return new AmericanNewGameStrategy();
         }
+
+        public IHitStrategy SoftSeventeenRule()
+        {
+            return new SoftSeventeenStrategy();
+        }
     }
 }
