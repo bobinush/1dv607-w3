@@ -38,14 +38,18 @@ namespace BlackJack.model
         {
             if (m_deck != null && a_player.CalcScore() < g_maxScore && !IsGameOver())
             {
-                Card c;
-                c = m_deck.GetCard();
-                c.Show(true);
-                a_player.DealCard(c);
-
+                GiveCardTo(a_player, true);
                 return true;
             }
             return false;
+        }
+
+        public void GiveCardTo(Player a_dealerOrPlayer, bool shouldShowCard) 
+        {
+            Card c;
+            c = m_deck.GetCard();
+            c.Show(shouldShowCard);
+            a_dealerOrPlayer.DealCard(c); 
         }
 
         public void Stand()
