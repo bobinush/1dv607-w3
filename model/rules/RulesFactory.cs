@@ -21,5 +21,15 @@ namespace BlackJack.model.rules
         {
             return new SoftSeventeenStrategy();
         }
+
+        public IWhoWinsStrategy DealerWinsRule() 
+        {
+            return new DealerWinsOnEqual();
+        }
+          
+        public IWhoWinsStrategy PlayerWinsRule() 
+        {
+            return new PlayerWinsOnEqual();
+        }
     }
 }
