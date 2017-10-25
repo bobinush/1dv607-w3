@@ -14,6 +14,7 @@ namespace BlackJack.model
         private rules.IHitStrategy m_hitRule;
         private rules.IWhoWinsStrategy m_winRule;
 
+        public event EventHandler SubscriberList;
 
         public Dealer(rules.RulesFactory a_rulesFactory)
         {
@@ -50,11 +51,16 @@ namespace BlackJack.model
             c = m_deck.GetCard();
             c.Show(shouldShowCard);
             a_dealerOrPlayer.DealCard(c); 
+
+            if (SubscriberList != null)
+            {
+                SubscriberList(this, EventArgs.Empty);
+            }
         }
 
         public void Stand()
         {
-            if(m_deck != null) 
+            if (m_deck != null) 
             {
                 ShowHand();
                 while(m_hitRule.DoHit(this)) {
@@ -76,5 +82,8 @@ namespace BlackJack.model
             }
             return false;
         }
+
+        
+        
     }
 }

@@ -9,12 +9,16 @@ namespace BlackJack
     {
         static void Main(string[] args)
         {
-            model.Game g = new model.Game();
             view.IView v = new view.SimpleView(); // new view.SwedishView();
             controller.PlayGame ctrl = new controller.PlayGame();
+            // new dealer
+            // subsribe
+            model.Dealer m_dealer = new model.Dealer(new model.rules.RulesFactory());
+            m_dealer.SubscriberList += ctrl.HandleEvent;
+            
+            model.Game g = new model.Game(m_dealer);
 
             while (ctrl.Play(g, v));
         }
     }
 }
-//Ghallåja
