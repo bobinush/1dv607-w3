@@ -9,10 +9,8 @@ namespace BlackJack
     {
         static void Main(string[] args)
         {
-            view.IView v = new view.SimpleView(); // new view.SwedishView();
+            view.IView v = new view.SimpleView(); 
             controller.PlayGame ctrl = new controller.PlayGame();
-            // new dealer
-            // subsribe
             model.Dealer m_dealer = new model.Dealer(new model.rules.RulesFactory());
             m_dealer.SubscriberList += ctrl.HandleEvent;
             

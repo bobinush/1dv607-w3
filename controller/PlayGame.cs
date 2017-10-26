@@ -27,27 +27,27 @@ namespace BlackJack.controller
 
             int input = a_view.GetInput();
 
-            if (input == (int)GameAlternatives.Play)
+            if (input == (int)GameAlternative.Play)
             {
                 a_game.NewGame();
             }
-            else if (input == (int)GameAlternatives.Hit)
+            else if (input == (int)GameAlternative.Hit)
             {
                 a_game.Hit();
             }
-            else if (input == (int)GameAlternatives.Stand)
+            else if (input == (int)GameAlternative.Stand)
             {
                 a_game.Stand();
             }
 
-            return input != (int)GameAlternatives.Quit;
+            return input != (int)GameAlternative.Quit;
         }
         
 		public void HandleEvent(object sender, EventArgs args)
 		{
 			System.Threading.Thread.Sleep(1000);
 			Console.Clear();
-			// Console.WriteLine("Something happened in " + sender);
+			
 			m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
             m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
 		}

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BlackJack.model
 {
-	public enum GameAlternatives
+	public enum GameAlternative
 	{
 		Play,
 		Hit,

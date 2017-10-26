@@ -19,23 +19,23 @@ namespace BlackJack.view
 		public int GetInput()
 		{
 			var input = System.Console.In.Read();
-			GameAlternatives ret;
+			GameAlternative ret;
 			switch (input)
 			{
 				case 'p':
-					ret = GameAlternatives.Play;
+					ret = GameAlternative.Play;
 					break;
 				case 'h':
-					ret = GameAlternatives.Hit;
+					ret = GameAlternative.Hit;
 					break;
 				case 's':
-					ret = GameAlternatives.Stand;
+					ret = GameAlternative.Stand;
 					break;
 				case 'q':
-					ret = GameAlternatives.Quit;
+					ret = GameAlternative.Quit;
 					break;
 				default:
-					ret = GameAlternatives.Other;
+					ret = GameAlternative.Other;
 					break;
 			}
 
